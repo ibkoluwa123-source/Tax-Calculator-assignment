@@ -1,0 +1,57 @@
+'''
+print ("Filling Status:")
+print ("0-Single")
+print ("1-married filling jointly or widower")
+print ("2-married Filling separately")
+print ("3-Head of household")
+
+Status= int(input("Enter your filling status: "))
+income= float(input("Enter your taxable income: "))
+
+tax=0
+
+# single filer
+if status== 0:
+ if income <= 8350:
+  tax =income * 0.10
+ elif income <=33950:
+    tax =8350 * 0.10 + (income -8350) * 0.15
+   else:
+       tax = 8350 * 0.10 +(33950 - 8350) * 0.15 + (income- 33950) * 0.25
+       
+#Married filing jointly
+if Status == 1:
+ if income <= 16700:
+  tax = income * 0.10
+  elif income <= 67900:
+    tax = 16700 * 0.10
+    tax = tax + (income -16700) * 0.15
+  else:
+    tax = 16700 * 0.10
+    tax = tax  + (67900 - 16700) * 0.15
+    tax = tax + (income - 67900) * 0.25
+    
+#Married filing separately
+elif status ==2:
+if income <= 8350:
+   tax =income *0.10
+ elif income <= 33950:
+   tax =8350 * 0.10 + (income - 8350) * 0.15
+ else:
+   tax = 8350 * 0.10 + (33950 - 8350) * 0.15
+   
+#Head of household
+elif status == 3:
+if income <= 11950:
+  tax =income * 0.10
+elif income <= 45500:
+  tax =11950 * 0.10 = (income- 11950)* 0.15
+ else:
+  tax = 11950 * 0.10 + (45500 -11950) * 0.15 + (income-45500) * 0.25
+  
+else:
+   print("Invalid filing status")
+   
+   print("Your total tax is:", tax)
+   
+''
